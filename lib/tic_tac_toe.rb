@@ -115,7 +115,6 @@ class TicTacToe
     if p == nil
       nil
     else
-      winning = p
       winner = @board[p[0]]
     end
   end
