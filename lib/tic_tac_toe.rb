@@ -48,7 +48,7 @@ class TicTacToe
     index.between?(0,8) && !position_taken?(index)
   end
 
-  def turn(board)
+  def turn
     # encapsulate the logic of a single complete turn
     player = current_player()
     puts "#{player}'s turn. Please enter a number from 1-9."
