@@ -82,7 +82,7 @@ class TicTacToe
   end
 
   def won?
-    b = board
+    b = @board
     WIN_COMBINATIONS.detect{|c| b[c[0]] != " " && b[c[0]] == b[c[1]] && b[c[0]] == b[c[2]]}
     # should be able to iterate over the combinations defined in WIN_COMBINATIONS
     # using each or a higher-level iterator
