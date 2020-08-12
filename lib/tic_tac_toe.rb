@@ -16,11 +16,11 @@ class TicTacToe
 
   def display_board
     x = *(0..8)
-    puts" #{board[x.shift]} | #{board[x.shift]} | #{board[x.shift]} "
+    puts" #{@board[x.shift]} | #{@board[x.shift]} | #{@board[x.shift]} "
     puts "-----------"
-    puts" #{board[x.shift]} | #{board[x.shift]} | #{board[x.shift]} "
+    puts" #{@board[x.shift]} | #{@board[x.shift]} | #{@board[x.shift]} "
     puts "-----------"
-    puts" #{board[x.shift]} | #{board[x.shift]} | #{board[x.shift]} "
+    puts" #{@board[x.shift]} | #{@board[x.shift]} | #{@board[x.shift]} "
   end
 
   def input_to_index(input)
