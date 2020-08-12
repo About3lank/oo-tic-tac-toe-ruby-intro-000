@@ -111,10 +111,11 @@ class TicTacToe
   end
 
   def winner
-    if @board.won? == nil
+    p = won?()
+    if p == nil
       nil
     else
-      winning = @board.won?
+      winning = p
       winner = board[winning[0]]
     end
   end
