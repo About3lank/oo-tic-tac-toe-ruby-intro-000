@@ -113,7 +113,7 @@ class TicTacToe
     if @board.won? == nil
       nil
     else
-      winning = @board.won?()
+      winning = @board.won?
       winner = board[winning[0]]
     end
   end
@@ -130,7 +130,7 @@ class TicTacToe
     if @board.won?
       w = winner()
       puts "Congratulations #{w}!"
-    elsif draw?()
+    elsif @board.draw?
       puts "Cat's Game!"
     end
   end
