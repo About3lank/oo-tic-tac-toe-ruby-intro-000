@@ -101,7 +101,7 @@ class TicTacToe
     # false if the board is not won and the board is not ful
     # false if the board is won
     # compose this method solely using the methods you used above with some ruby logi
-    @board.full? && !(@board.won?)
+    full?() && !(won?())
   end
 
   def over?
