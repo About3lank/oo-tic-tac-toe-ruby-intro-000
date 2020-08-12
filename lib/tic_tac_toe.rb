@@ -107,7 +107,7 @@ class TicTacToe
   def over?
     # returns true if the board has been won, is a draw, or is full
     # compose this method solely using the methods you used above with some ruby logic
-    @board.full? || @board.draw? || @board.won?
+    full?() || draw?() || won?()
   end
 
   def winner
@@ -129,7 +129,7 @@ class TicTacToe
     until @board.over?
       turn()
     end
-    if @board.won?
+    if won?()
       w = winner()
       puts "Congratulations #{w}!"
     elsif @board.draw?
