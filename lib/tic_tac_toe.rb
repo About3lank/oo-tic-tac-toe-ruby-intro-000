@@ -1,6 +1,6 @@
 class TicTacToe
   def initialize
-    @board = [" "]*3
+    @board = [" "]*9
   end
   #
   #
