@@ -92,7 +92,7 @@ class TicTacToe
   def full?
     # should accept a board and return true if every element in the board contains either an "X" or an "O".
     # return false if there is an available position and true if there is not
-    board.none?{|p| p == " "}
+    @board.none?{|p| p == " "}
   end
 
   def draw?
@@ -100,20 +100,20 @@ class TicTacToe
     # false if the board is not won and the board is not ful
     # false if the board is won
     # compose this method solely using the methods you used above with some ruby logi
-    full?() && !(won?())
+    @board.full?() && !(@board.won?())
   end
 
   def over?
     # returns true if the board has been won, is a draw, or is full
     # compose this method solely using the methods you used above with some ruby logic
-    full?() || draw?() || won?()
+    @board.full?() || @board.draw?() || @board.won?()
   end
 
   def winner
-    if won?() == nil
+    if @board.won?() == nil
       nil
     else
-      winning = won?()
+      winning = @board.won?()
       winner = board[winning[0]]
     end
   end
