@@ -59,6 +59,7 @@ class TicTacToe
       i = gets.to_i
     end
     move(i, player)
+    display_board()
   end
 
   def turn_count
