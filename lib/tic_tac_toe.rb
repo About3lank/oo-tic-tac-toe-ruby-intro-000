@@ -116,7 +116,7 @@ class TicTacToe
       nil
     else
       winning = p
-      winner = @board[winning[0]]
+      winner = @board[p[0]]
     end
   end
 
