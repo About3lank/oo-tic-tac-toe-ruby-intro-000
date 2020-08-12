@@ -100,17 +100,17 @@ class TicTacToe
     # false if the board is not won and the board is not ful
     # false if the board is won
     # compose this method solely using the methods you used above with some ruby logi
-    @board.full?() && !(@board.won?())
+    @board.full? && !(@board.won?)
   end
 
   def over?
     # returns true if the board has been won, is a draw, or is full
     # compose this method solely using the methods you used above with some ruby logic
-    @board.full?() || @board.draw?() || @board.won?()
+    @board.full? || @board.draw? || @board.won?
   end
 
   def winner
-    if @board.won?() == nil
+    if @board.won? == nil
       nil
     else
       winning = @board.won?()
@@ -124,7 +124,7 @@ class TicTacToe
     # checking if the game is over after every turn
     # at the conclusion of the game, reporting to the user the outcome of the game
     #board = [" "] * 9
-    until @board.over?()
+    until @board.over?
       turn()
     end
     if @board.won?
