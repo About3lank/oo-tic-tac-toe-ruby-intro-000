@@ -64,7 +64,7 @@ class TicTacToe
   def turn_count
     # returns the number of turns that have been played.
     x = []
-    board.select do |c|
+    @board.select do |c|
       c != " " && !c.nil? ? x << c : a=a
     end
     x.length()
