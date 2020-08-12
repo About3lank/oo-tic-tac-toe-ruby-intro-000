@@ -58,10 +58,10 @@ class TicTacToe
       puts "Try again. Please enter a number from 1-9"
       i = gets.to_i
     end
-    move(board, i, player)
+    move(i, player)
   end
 
-  def turn_count(board)
+  def turn_count
     # returns the number of turns that have been played.
     x = []
     board.select do |c|
@@ -70,7 +70,7 @@ class TicTacToe
     x.length()
   end
 
-  def current_player(board)
+  def current_player
     # use the #turn_count method to determine if it is "X"'s turn or "O"'s
     c = turn_count(board) % 2
     if c == 0
@@ -81,7 +81,8 @@ class TicTacToe
 
   end
 
-  def won?(b)
+  def won?
+    b = board
     WIN_COMBINATIONS.detect{|c| b[c[0]] != " " && b[c[0]] == b[c[1]] && b[c[0]] == b[c[2]]}
     # should be able to iterate over the combinations defined in WIN_COMBINATIONS
     # using each or a higher-level iterator
@@ -108,7 +109,7 @@ class TicTacToe
     full?(board) || draw?(board) || won?(board)
   end
 
-  def winner(board)
+  def winner
     if won?(board) == nil
       nil
     else
