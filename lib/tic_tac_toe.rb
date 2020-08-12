@@ -32,7 +32,7 @@ class TicTacToe
   def move(index, token)
     # index in the board array that the player would like to fill out with an "X" or an "O"
     # the player's character (either "X" or "O")
-    m = board
+    m = @board
     m[index] = token
     @board = m
   end
@@ -40,12 +40,12 @@ class TicTacToe
   def position_taken?(index)
     # method will check to see if that board index is vacant or if it contains an "X" or an "O"
     # If the position is free, the method should return false (i.e. "not taken")
-    board[index] != " " && !board[index].nil?
+    @board[index] != " " && !@board[index].nil?
   end
 
   def valid_move?(index)
     # returns true if the move is valid and false or nil if not
-    index.between?(0,8) && !position_taken?(board, index)
+    index.between?(0,8) && !position_taken?(index)
   end
 
   def turn(board)
