@@ -14,7 +14,7 @@ class TicTacToe
     [2, 4, 6]
   ]
 
-  def display_board(board)
+  def display_board
     x = *(0..8)
     puts" #{board[x.shift]} | #{board[x.shift]} | #{board[x.shift]} "
     puts "-----------"
@@ -29,7 +29,7 @@ class TicTacToe
     index = i - 1
   end
 
-  def move(board, index, token)
+  def move(index, token)
     # index in the board array that the player would like to fill out with an "X" or an "O"
     # the player's character (either "X" or "O")
     m = board
@@ -37,24 +37,24 @@ class TicTacToe
     m
   end
 
-  def position_taken?(board, index)
+  def position_taken?(index)
     # method will check to see if that board index is vacant or if it contains an "X" or an "O"
     # If the position is free, the method should return false (i.e. "not taken")
     board[index] != " " && !board[index].nil?
   end
 
-  def valid_move?(board, index)
+  def valid_move?(index)
     # returns true if the move is valid and false or nil if not
     index.between?(0,8) && !position_taken?(board, index)
   end
 
   def turn(board)
     # encapsulate the logic of a single complete turn
-    player = current_player(board)
+    player = current_player()
     puts "#{player}'s turn. Please enter a number from 1-9."
     i = gets.chomp.to_i
     i = input_to_index(i)
-    while !valid_move?(board, i)
+    while !valid_move?(i)
       puts "Try again. Please enter a number from 1-9"
       i = gets.to_i
     end
