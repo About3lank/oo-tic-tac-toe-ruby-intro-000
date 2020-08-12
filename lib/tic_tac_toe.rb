@@ -125,7 +125,7 @@ class TicTacToe
     # at the conclusion of the game, reporting to the user the outcome of the game
     #board = [" "] * 9
     until @board.over?()
-      turn(board)
+      turn()
     end
     if @board.won?
       w = winner()
