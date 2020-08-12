@@ -34,7 +34,7 @@ class TicTacToe
     # the player's character (either "X" or "O")
     m = board
     m[index] = token
-    m
+    @board = m
   end
 
   def position_taken?(index)
@@ -89,48 +89,48 @@ class TicTacToe
     # return the correct board indexes that created the win
   end
 
-  def full?(board)
+  def full?
     # should accept a board and return true if every element in the board contains either an "X" or an "O".
     # return false if there is an available position and true if there is not
     board.none?{|p| p == " "}
   end
 
-  def draw?(board)
+  def draw?
     # returns true if the board has not been won but is full
     # false if the board is not won and the board is not ful
     # false if the board is won
     # compose this method solely using the methods you used above with some ruby logi
-    full?(board) && !(won?(board))
+    full?() && !(won?())
   end
 
-  def over?(board)
+  def over?
     # returns true if the board has been won, is a draw, or is full
     # compose this method solely using the methods you used above with some ruby logic
-    full?(board) || draw?(board) || won?(board)
+    full?() || draw?() || won?()
   end
 
   def winner
-    if won?(board) == nil
+    if won?() == nil
       nil
     else
-      winning = won?(board)
+      winning = won?()
       winner = board[winning[0]]
     end
   end
 
-  def play(board)
+  def play
     # the main method of the tic tac toe application and is responsible for the game loop
     # must allow players to take turns
     # checking if the game is over after every turn
     # at the conclusion of the game, reporting to the user the outcome of the game
     #board = [" "] * 9
-    until over?(board)
+    until over?()
       turn(board)
     end
     if won?(board)
-      w = winner(board)
+      w = winner()
       puts "Congratulations #{w}!"
-    elsif draw?(board)
+    elsif draw?()
       puts "Cat's Game!"
     end
   end
